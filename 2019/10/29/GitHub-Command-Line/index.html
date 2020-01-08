@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://vilily.github.io/2019/10/29/GitHub-Command-Line/one.png">
 <meta property="og:image" content="https://vilily.github.io/2019/10/29/GitHub-Command-Line/two.png">
 <meta property="og:image" content="https://vilily.github.io/2019/10/29/GitHub-Command-Line/three.png">
-<meta property="og:updated_time" content="2019-12-12T14:44:28.821Z">
+<meta property="og:updated_time" content="2020-01-06T18:34:06.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub Command Line">
 <meta name="twitter:description" content="Common Command Lines and the Solutions to sone Errors of GitHub.">
@@ -332,6 +332,17 @@
 <ol start="5">
 <li><p>获取ssh</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>撤回上一次commit</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD~</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取已经commit但未push的文件信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当前提交状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+
 
 </li>
 </ol>
@@ -346,7 +357,7 @@
         <p><span>Title:</span><a href="">GitHub Command Line</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Bao Wenjie</a></p>
         <p><span>Created:</span>2019-10-29, 22:33:04</p>
-        <p><span>Updated:</span>2019-12-12, 22:44:28</p>
+        <p><span>Updated:</span>2020-01-07, 02:34:06</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="" title="GitHub Command Line">https://vilily.github.io/2019/10/29/GitHub-Command-Line/</a>
             <span class="copy-path" data-clipboard-text="From https://vilily.github.io/2019/10/29/GitHub-Command-Line/　　By Bao Wenjie" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
@@ -452,7 +463,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="../../../12/17/Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="../../../12/15/Pytorch/">Pytorch</a></li><li class="post-list-item"><a class="post-list-link" href="../../../12/14/Variational-Inference/">Variational Inference</a></li><li class="post-list-item"><a class="post-list-link" href="../../../12/05/Multiple-sequence-alignment-with-hierarchical-clustering/">Multiple sequence alignment with hierarchical clustering</a></li><li class="post-list-item"><a class="post-list-link" href="../../../11/09/mySQL-Command-Line/">mySQL Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="">GitHub Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="../../28/PCA-algorithm/">PCA algorithm</a></li><li class="post-list-item"><a class="post-list-link" href="../../25/GMM-algorithm/">GMM algorithm</a></li><li class="post-list-item"><a class="post-list-link" href="../../19/EM-algorithm/">EM algorithm</a></li><li class="post-list-item"><a class="post-list-link" href="../../17/markdown-doc/">markdown-doc</a></li><li class="post-list-item"><a class="post-list-link" href="../../16/Hexo-Learn/">Hexo-Learn</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="../../../../2020/01/06/HMM-algorithm/">HMM-algorithm</a></li><li class="post-list-item"><a class="post-list-link" href="../../../12/17/Linux/">Linux</a></li><li class="post-list-item"><a class="post-list-link" href="../../../12/15/Pytorch/">Pytorch</a></li><li class="post-list-item"><a class="post-list-link" href="../../../12/14/Variational-Inference/">Variational Inference</a></li><li class="post-list-item"><a class="post-list-link" href="../../../12/05/Multiple-sequence-alignment-with-hierarchical-clustering/">Multiple sequence alignment with hierarchical clustering</a></li><li class="post-list-item"><a class="post-list-link" href="../../../11/09/mySQL-Command-Line/">mySQL Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="">GitHub Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="../../28/PCA-algorithm/">PCA algorithm</a></li><li class="post-list-item"><a class="post-list-link" href="../../25/GMM-algorithm/">GMM algorithm</a></li><li class="post-list-item"><a class="post-list-link" href="../../19/EM-algorithm/">EM algorithm</a></li><li class="post-list-item"><a class="post-list-link" href="../../17/markdown-doc/">markdown-doc</a></li><li class="post-list-item"><a class="post-list-link" href="../../16/Hexo-Learn/">Hexo-Learn</a></li></ul>
 
 
 
@@ -466,7 +477,7 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2019 Bao Wenjie
+                2019-2020 Bao Wenjie
             </div>
             <div class="footer-right">
                 <a href="https://vilily.github.io/" target="_blank" title="tooltip.Hexo">A place</a>  designed by Wenjie Bao <i class="fa fa-heart animated infinite pulse"></i>
