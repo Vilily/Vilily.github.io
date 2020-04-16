@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://vilily.github.io/2019/10/29/GitHub-Command-Line/one.png">
 <meta property="og:image" content="https://vilily.github.io/2019/10/29/GitHub-Command-Line/two.png">
 <meta property="og:image" content="https://vilily.github.io/2019/10/29/GitHub-Command-Line/three.png">
-<meta property="og:updated_time" content="2020-03-27T02:03:38.036Z">
+<meta property="og:updated_time" content="2020-04-16T02:18:14.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub Command Line">
 <meta name="twitter:description" content="Common Command Lines and the Solutions to sone Errors of GitHub.">
@@ -323,7 +323,7 @@
 <p><img src="//vilily.github.io/2019/10/29/GitHub-Command-Line/three.png" alt="GitBash"></p>
 </li>
 <li><p>运行命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init#初始化本地仓库</span><br><span class="line">git config user.email&quot;your email@address&quot;</span><br><span class="line">git config user.name&quot;your name&quot;</span><br><span class="line">git add .</span><br><span class="line">git commit -m&apos;My first post&apos;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init<span class="comment">#初始化本地仓库</span></span><br><span class="line">git config user.email<span class="string">"your email@address"</span></span><br><span class="line">git config user.name<span class="string">"your name"</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m<span class="string">'My first post'</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
 
 
 
@@ -331,18 +331,25 @@
 </ol>
 <ol start="5">
 <li><p>获取ssh</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>撤回上一次commit</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD~</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD~</span><br><span class="line">git reset HEAD@&#123;index&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>获取已经commit但未push的文件信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry -v</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>当前提交状态</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出所有操作记录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合并到最后一次提交</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取最新提交记录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick master</span><br></pre></td></tr></table></figure>
 
 
 
@@ -364,7 +371,7 @@
         <p><span>Title:</span><a href="">GitHub Command Line</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Bao Wenjie</a></p>
         <p><span>Created:</span>2019-10-29, 22:33:04</p>
-        <p><span>Updated:</span>2020-03-27, 10:03:38</p>
+        <p><span>Updated:</span>2020-04-16, 10:18:14</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="" title="GitHub Command Line">https://vilily.github.io/2019/10/29/GitHub-Command-Line/</a>
             <span class="copy-path" data-clipboard-text="From https://vilily.github.io/2019/10/29/GitHub-Command-Line/　　By Bao Wenjie" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
