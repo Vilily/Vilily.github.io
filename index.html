@@ -274,6 +274,171 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-SQL-install" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="2020/10/29/SQL-install/" class="article-date">
+      <time datetime="2020-10-29T11:49:01.000Z" itemprop="datePublished">2020-10-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2020/10/29/SQL-install/">SQL-install</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h1><h3 id="下载："><a href="#下载：" class="headerlink" title="下载："></a>下载：</h3><ul>
+<li><p>在<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">MySQL官网</a>下载<strong>zip</strong>文件；</p>
+</li>
+<li><p>本地直接解压；</p>
+</li>
+</ul>
+<h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><ul>
+<li>配置<strong>环境变量</strong>：添加解压文件的<strong>bin</strong>文件夹路径至<strong>PATH</strong>；</li>
+<li>初始化，生成DATA文件：<em>mysqld –initialize-insecure –user=mysql</em></li>
+<li>网络连接：<em>mysqld -install</em></li>
+<li>启动服务：<em>net start mysql</em>【在bin目录下】</li>
+</ul>
+<h3 id="登录："><a href="#登录：" class="headerlink" title="登录："></a>登录：</h3><ul>
+<li><p>登录【不用密码】：<em>mysql -u root -p</em></p>
+</li>
+<li><p>查询用户密码：<em>select host,user,authentication_string from mysql.user;</em></p>
+</li>
+<li><p>设置<strong>root</strong>用户密码：<strong>ALTER USER ‘root’@’localhost’ IDENTIFIED WITH mysql_native_password BY ‘123456’;</strong></p>
+</li>
+<li><p>保存修改：<em>flush privileges;</em></p>
+</li>
+</ul>
+<h3 id="基本操作："><a href="#基本操作：" class="headerlink" title="基本操作："></a>基本操作：</h3><ul>
+<li><strong>退出</strong>：<em>quit</em></li>
+<li></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/SQL/">SQL</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-LDA-Fisher" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="2020/07/07/LDA-Fisher/" class="article-date">
+      <time datetime="2020-07-07T07:58:22.000Z" itemprop="datePublished">2020-07-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2020/07/07/LDA-Fisher/">LDA(Fisher)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="LDA-Fisher"><a href="#LDA-Fisher" class="headerlink" title="LDA(Fisher)"></a>LDA(Fisher)</h1><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p><strong>LDA(Linear Discriminant Analysis)</strong>，又称<strong>Fisher判别方法</strong>。是一种经典的<strong>线性判别方法</strong>。该方法主要思想是：将样例投影到一维直线上，使得<strong>同类样例</strong>的投影点尽可能<strong>接近</strong>和<strong>密集</strong>；<strong>异类</strong>投影点尽可能<strong>远离</strong>。</p>
+<p><img src="//vilily.github.io/2020/07/07/LDA-Fisher/.%5CLDA-Fisher%5Cfisher.png" alt="fisher"></p>
+<h3 id="计算推导"><a href="#计算推导" class="headerlink" title="计算推导"></a>计算推导</h3><p>假设已知样本 $C_1$ 和 $C_2$ ，$|C_1|、|C_2|$ 分别两类样本数据的总数。</p>
+<p>则两类样例的<strong>类中心</strong>分别为：</p>
+<p>$$\mu_1=\frac{1}{|C_1|}\sum_{x\in{C_1}}x$$</p>
+<p>$$\mu_2=\frac{1}{|C_2|}\sum_{x\in{C_2}}x$$</p>
+<p>假设最佳的投影方向为 $w$ 则，样本点 $x$ 投影到 $w$ 上的点的坐标为：$y=w^Tx$</p>
+<p>所以，投影后的<strong>类中心</strong>为：</p>
+<p>$$m_k=\frac{1}{|C_k|}\sum_{x\in{C_k}}w^Tx=w^T\frac{1}{|C_k|}\sum_{x\in{C_k}}x=w^T\mu_k$$</p>
+<h4 id="类间距离"><a href="#类间距离" class="headerlink" title="类间距离"></a>类间距离</h4><p><strong>类中心</strong>的<strong>间距</strong>为：</p>
+<p>$$d_{(1, 2)}=(m_1-m_2)^2=(m_1-m_2)(m_1-m_2)^T=w^T(\mu_1-\mu_2)(\mu_1-\mu_2)^Tw=w^TS_bw$$</p>
+<p>其中，$S_b$ 为<strong>类间散度矩阵</strong>：</p>
+<p>$$S_b=(\mu_1-\mu_2)(\mu_1-\mu_2)^T$$</p>
+<h4 id="类内距离"><a href="#类内距离" class="headerlink" title="类内距离"></a>类内距离</h4><p><strong>类内距离</strong>用类内样本的方差来衡量，对于第 $k$ 个类，方差为：</p>
+<p>$$\begin{split}S_k^2=\sum_{x\in{C_k}}(y-m_k)^2=\sum_{x\in{C_k}}(w^T(x-\mu_k))^2\=\sum_{x\in{C_k}}(w^T(x-\mu_k))((x-\mu_k)^Tw)\=w^T[\sum_{x\in{C_k}}(x-\mu_k)(x-\mu_k)^T]w \end{split}$$</p>
+<p>所有类别<strong>类内距离</strong>之和为：</p>
+<p>$$\sum_{k\in n}S_k^2=w^T[\sum_{k\in n}\sum_{x\in{C_k}}(x-\mu_k)(x-\mu_k)^T]w$$</p>
+<p><strong>类内散度矩阵</strong>为：</p>
+<p>$$S_w=\sum\sum_{x\in{C_k}}(x-\mu_k)(x-\mu_k)^T$$</p>
+<h4 id="最优化"><a href="#最优化" class="headerlink" title="最优化"></a>最优化</h4><p>我们的优化目的是增加<strong>类间距离</strong>，减小<strong>类内距离</strong>，所有可以最大化函数：</p>
+<p>$$J(w)=\frac{(m_1-m_2)^2}{S_1^2+S_2^2}=\frac{w^TS_bw}{w^TS_ww}$$</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Machine-Learning/">Machine Learning</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-PowerShell" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -768,134 +933,6 @@
       
         <p class="article-more-link">
           <a href="2019/10/29/GitHub-Command-Line/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-PCA-algorithm" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2019/10/28/PCA-algorithm/" class="article-date">
-      <time datetime="2019-10-28T13:09:18.000Z" itemprop="datePublished">2019-10-28</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2019/10/28/PCA-algorithm/">PCA algorithm</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              A simply inroduction to the PCA algorithm.
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Machine-Learning/">Machine Learning</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="2019/10/28/PCA-algorithm/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-GMM-algorithm" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="2019/10/25/GMM-algorithm/" class="article-date">
-      <time datetime="2019-10-25T14:05:41.000Z" itemprop="datePublished">2019-10-25</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="2019/10/25/GMM-algorithm/">GMM algorithm</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              What's GMM and How to use the GMM to do clusterring?
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Cluster/">Cluster</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Machine-Learning/">Machine Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="tags/Python/">Python</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="2019/10/25/GMM-algorithm/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
